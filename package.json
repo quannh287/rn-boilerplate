@@ -1,0 +1,24 @@
+{
+  "name": "rn-boiler-template",
+  "version": "1.0.0",
+  "description": "React Native template with Typescript",
+  "author": "quannh287 <quannh2871@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "keywords": [
+    "react-native",
+    "typescript",
+    "template",
+    "boilerplate",
+    "starter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MasonLe2497/BoilerplateReactNative"
+  },
+  "homepage": "https://github.com/MasonLe2497/BoilerplateReactNative#readme"
+}
