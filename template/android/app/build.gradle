@@ -1,5 +1,14 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+    development: ".env.development",
+    staging: ".env.staging",
+    production: ".env.production",
+    anothercustombuild: ".env",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 import com.android.build.OutputFile
 
 /**
@@ -133,6 +142,25 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
+    flavorDimensions "default"
+
+    productFlavors {
+        development {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", project.env.get("APP_NAME")
+        }
+        staging {
+            dimension "default"
+            applicationIdSuffix ".stage"
+            resValue "string", "app_name", project.env.get("APP_NAME")
+        }
+        production {
+            dimension "default"
+            resValue "string", "app_name", project.env.get("APP_NAME")
+        }
+    }
+
     defaultConfig {
         applicationId "com.rnbase"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -262,6 +290,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+    implementation "androidx.core:core-splashscreen:1.0.0" // react-native-bootsplash
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'

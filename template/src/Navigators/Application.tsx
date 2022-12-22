@@ -1,35 +1,26 @@
 import React from 'react'
-import { SafeAreaView, StatusBar } from 'react-native'
+import { StatusBar } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import { StartupContainer } from '@/Containers'
-import { useTheme } from '@/Hooks'
-import MainNavigator from './Main'
 import { navigationRef } from './utils'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { APP_SCREEN } from '@Navigators/screenTypes'
+import LoginScreen from '@Containers/Authentication/Login'
 
 const Stack = createStackNavigator()
 
 // @refresh reset
 const ApplicationNavigator = () => {
-  const { Layout, darkMode, NavigationTheme } = useTheme()
-  const { colors } = NavigationTheme
-
   return (
-    <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
-      <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
-        <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Startup" component={StartupContainer} />
-          <Stack.Screen
-            name="Main"
-            component={MainNavigator}
-            options={{
-              animationEnabled: false,
-            }}
-          />
+    <SafeAreaProvider>
+      <NavigationContainer ref={navigationRef}>
+        <StatusBar barStyle={'dark-content'} />
+
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Main'}>
+          <Stack.Screen name={APP_SCREEN.LOGIN} component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+    </SafeAreaProvider>
   )
 }
 

@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 
+#import "RNBootSplash.h" // react-native-bootsplash
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -52,6 +53,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
     rootView.backgroundColor = [UIColor whiteColor];
   }
 
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
+  
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;

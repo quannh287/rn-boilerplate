@@ -11,15 +11,21 @@
     "noEmit": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"],
+      "@Assets/*": ["./src/Assets/*"],
+      "@Commons/*": ["./src/Commons/*"],
+      "@Components/*": ["./src/Components/*"],
+      "@Config/*": ["./src/Config/*"],
+      "@Hooks/*": ["./src/Hooks/*"],
+      "@Containers/*": ["./src/Containers/*"],
+      "@Navigators/*": ["./src/Navigators/*"],
+      "@Services/*": ["./src/Services/*"],
+      "@Store/*": ["./src/Store/*"],
+      "@Theme/*": ["./src/Theme/*"],
+      "@Translations/*": ["./src/Translations/*"],
+      "@Models/*": ["./src/Models/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }

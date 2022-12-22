@@ -2,7 +2,7 @@ import { EndpointBuilder } from '@reduxjs/toolkit/dist/query/endpointDefinitions
 
 export default (build: EndpointBuilder<any, any, any>) =>
   build.query<User, string>({
-    query: id => `/users/${id}`,
+    query: (id) => `/users/${id}`,
   })
 
 export type User = {

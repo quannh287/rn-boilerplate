@@ -30,6 +30,7 @@ build/
 local.properties
 *.iml
 *.hprof
+android/app/release
 
 # node.js
 #
@@ -61,3 +62,6 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+# react-native-config codegen
+ios/tmp.xcconfig
