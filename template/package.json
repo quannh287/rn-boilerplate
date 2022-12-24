@@ -34,6 +34,7 @@
     "react-hook-form": "^7.41.0",
     "react-i18next": "^11.18.3",
     "react-native": "0.69.3",
+    "react-native-common-components": "git+https://github.com/quannh287/react-native-common-components.git",
     "react-native-config": "^1.4.11",
     "react-native-fast-image": "^8.6.3",
     "react-native-flipper": "^0.176.1",

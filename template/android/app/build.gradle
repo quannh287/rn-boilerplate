@@ -146,17 +146,14 @@ android {
 
     productFlavors {
         development {
-            dimension "default"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", project.env.get("APP_NAME")
         }
         staging {
-            dimension "default"
             applicationIdSuffix ".stage"
             resValue "string", "app_name", project.env.get("APP_NAME")
         }
         production {
-            dimension "default"
             resValue "string", "app_name", project.env.get("APP_NAME")
         }
     }
