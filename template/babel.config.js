@@ -1,5 +1,5 @@
-const presets = ['module:metro-react-native-babel-preset']
-const plugins = []
+const presets = ['module:metro-react-native-babel-preset'];
+const plugins = [];
 
 plugins.push(
   [
@@ -13,20 +13,22 @@ plugins.push(
         '@Components': './src/Components',
         '@Config': './src/Config',
         '@Hooks': './src/Hooks',
-        '@Containers': './src/Containers',
+        '@Features': './src/Features',
         '@Navigators': './src/Navigators',
         '@Services': './src/Services',
-        '@Store': './src/Store',
+        '@Redux': './src/Redux',
         '@Theme': './src/Theme',
         '@Translations': './src/Translations',
         '@Models': './src/Models',
+        '@Network': './src/Network',
+        '@Storage': './src/Storage',
       },
     },
   ],
   'react-native-reanimated/plugin',
-)
+);
 
 module.exports = {
   presets,
   plugins,
-}
+};

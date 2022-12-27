@@ -45,6 +45,13 @@ platform :ios do
     build_app(workspace: "rnbase.xcworkspace", scheme: "rnbase")
     upload_to_testflight(changelog: "[DEVELOPMENT_ENV]", skip_waiting_for_build_processing: true)
 
+    clean_cache
     # after uploaded to testflight, notify to tester
+  end
+
+  desc "iOS clean file cache"
+  private_lane :clean_cache do
+    # File.delete("../#{BUILD_IOS_FILENAME}.ipa") if File.exist?("../#{BUILD_IOS_FILENAME}.ipa")
+    # File.delete("../#{BUILD_IOS_FILENAME}.app.dSYM.zip") if File.exist?("../#{BUILD_IOS_FILENAME}.app.dSYM.zip")
   end
 end

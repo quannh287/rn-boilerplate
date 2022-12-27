@@ -6,7 +6,7 @@ module.exports = {
   extends: ['@react-native-community'],
   plugins: ['jest'],
   rules: {
-    semi: ['error', 'never'],
+    semi: ['error', 'always'],
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': ['error', 'never'],
     'react/require-default-props': ['error'],
@@ -18,4 +18,4 @@ module.exports = {
       'babel-module': {},
     },
   },
-}
+};

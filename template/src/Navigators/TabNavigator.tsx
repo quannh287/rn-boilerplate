@@ -1,8 +1,8 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { ExampleContainer } from '@Containers/index'
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ExampleContainer } from 'src/Features/index';
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 // @refresh reset
 const TabNavigator = () => {
@@ -17,7 +17,7 @@ const TabNavigator = () => {
         }}
       />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
-export default TabNavigator
+export default TabNavigator;
