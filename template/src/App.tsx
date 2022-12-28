@@ -6,6 +6,13 @@ import './Translations';
 import ApplicationNavigator from '@Navigators/Application';
 import BootSplash from 'react-native-bootsplash';
 import { persistor, store } from '@Redux/index';
+import codePush, { CodePushOptions } from 'react-native-code-push';
+import { CODE_PUSH_KEY } from '@Config/index';
+
+const codePushOptions: CodePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+  deploymentKey: CODE_PUSH_KEY,
+};
 
 const App = () => {
   useEffect(() => {
@@ -24,4 +31,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default codePush(codePushOptions)(App);

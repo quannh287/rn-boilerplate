@@ -6,7 +6,6 @@ import { reduxPersistStorage } from '@Storage/index';
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/src/getDefaultMiddleware';
 import { allReducer } from '@Redux/allReducers';
 import { api } from '@Network/api';
-import { userApi } from '@Network/User';
 
 const persistConfig = {
   key: 'root',

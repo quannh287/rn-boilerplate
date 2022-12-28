@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import "RNBootSplash.h" // react-native-bootsplash
+#import <CodePush/CodePush.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -87,11 +88,12 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-#if DEBUG
-  return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
-#else
-  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-#endif
+  #if DEBUG
+    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
+  #else
+  // return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+    return [CodePush bundleURL];
+  #endif
 }
 
 #if RCT_NEW_ARCH_ENABLED
