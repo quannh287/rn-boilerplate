@@ -147,11 +147,11 @@ android {
 
     productFlavors {
         development {
-            applicationIdSuffix ".dev"
+//            applicationIdSuffix ".dev"
             resValue "string", "app_name", project.env.get("APP_NAME")
         }
         staging {
-            applicationIdSuffix ".stage"
+//            applicationIdSuffix ".stage"
             resValue "string", "app_name", project.env.get("APP_NAME")
         }
         production {

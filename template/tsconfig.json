@@ -26,7 +26,6 @@
       "@Translations/*": ["./src/Translations/*"],
       "@Models/*": ["./src/Models/*"],
       "@Network/*": ["./src/Network/*"],
-      "@Storage/*": ["./src/Storage/*"]
     }
   },
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]

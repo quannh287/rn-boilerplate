@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
 
-import { reduxPersistStorage } from '@Storage/index';
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/src/getDefaultMiddleware';
 import { allReducer } from '@Redux/allReducers';
 import { api } from '@Network/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const persistConfig = {
   key: 'root',
-  storage: reduxPersistStorage,
+  storage: AsyncStorage,
 };
 
 const persistedReducer = persistReducer(persistConfig, allReducer);

@@ -21,7 +21,6 @@ plugins.push(
         '@Translations': './src/Translations',
         '@Models': './src/Models',
         '@Network': './src/Network',
-        '@Storage': './src/Storage',
       },
     },
   ],
